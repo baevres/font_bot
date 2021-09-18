@@ -41,7 +41,7 @@ def font_code(string):
             if s != ' ' and (category(s)[0] not in 'SNP'):  # checking if <s> matches to a smile, a sign or a whitespace
 
                 try:
-                    if not name(s).startswith('CYRILLIC'):
+                    if not name(s).startswith('CYRILLIC') and (not name(s).startswith('CJK')):
                         look = f'{font}'.replace('x', s)
                         if s.isupper() and not font.startswith('NEGATIVE'):
                             look = look.replace('SMALL', 'CAPITAL')
